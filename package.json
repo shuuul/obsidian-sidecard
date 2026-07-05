@@ -1,7 +1,7 @@
 {
   "name": "obsidian-sidecard",
   "version": "0.1.0",
-  "description": "Card libraries in Obsidian's sidebar.",
+  "description": "SideCard adds a sidebar card library for Obsidian.",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs --watch",
@@ -21,7 +21,6 @@
     "@types/jest": "^29.5.14",
     "@types/node": "^20.11.24",
     "@types/sortablejs": "^1.15.9",
-    "builtin-modules": "^3.3.0",
     "esbuild": "^0.25.0",
     "jest": "^29.7.0",
     "jest-util": "^29.7.0",

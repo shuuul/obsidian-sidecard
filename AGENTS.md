@@ -18,7 +18,7 @@ That command performs:
 4. `obsidian reload`
 5. `obsidian plugin:enable id=sidecard`
 6. `obsidian plugin:reload id=sidecard`
-7. open the Card Library view
+7. open the SideCard view
 8. print `obsidian dev:errors`
 
 `npm run build` also auto-deploys artifacts when `OBSIDIAN_VAULT` is configured.

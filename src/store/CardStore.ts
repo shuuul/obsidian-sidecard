@@ -125,15 +125,11 @@ export class CardStore {
   }
 
   clearUnpinned(): void {
-    const count = this.data.state.cards.filter((card) => !card.pinned).length;
-    if (!this.confirmBulk(count, 'Clear unpinned cards?')) return;
     this.data.state.cards = this.data.state.cards.filter((card) => card.pinned);
     this.emit(true);
   }
 
   clearMissing(): void {
-    const count = this.data.state.cards.filter((card) => card.missing).length;
-    if (!this.confirmBulk(count, 'Clear missing cards?')) return;
     this.data.state.cards = this.data.state.cards.filter((card) => !card.missing);
     this.emit(true);
   }
@@ -278,10 +274,6 @@ export class CardStore {
     for (const card of this.data.state.cards) {
       card.missing = !(this.plugin.app.vault.getAbstractFileByPath(card.source.path) instanceof TFile);
     }
-  }
-
-  private confirmBulk(count: number, message: string): boolean {
-    return count < this.data.settings.confirmBeforeBulkRemoveCount || window.confirm(`${message}\n\n${count} cards will be removed.`);
   }
 
   private emit(shouldSave: boolean): void {

@@ -61,7 +61,7 @@ export class CardLibraryView extends ItemView {
     if (!file || !isSupportedFile(file)) return;
     this.draggedWorkspaceTab = {
       file,
-      leaf: this.app.workspace.activeLeaf,
+      leaf: this.app.workspace.getLeaf(false),
       startedAt: Date.now(),
     };
   };
@@ -75,7 +75,7 @@ export class CardLibraryView extends ItemView {
   }
 
   getDisplayText(): string {
-    return 'Card Library';
+    return 'SideCard';
   }
 
   getIcon(): string {
@@ -89,9 +89,9 @@ export class CardLibraryView extends ItemView {
     this.rootEl.addEventListener('dragover', this.handleSidebarDragOver, true);
     this.rootEl.addEventListener('dragleave', this.handleSidebarDragLeave, true);
     this.rootEl.addEventListener('drop', this.handleSidebarDrop, true);
-    document.addEventListener('dragstart', this.handleDocumentDragStart, true);
-    document.addEventListener('dragover', this.handleDocumentDragOver, true);
-    document.addEventListener('drop', this.handleDocumentDrop, true);
+    activeDocument.addEventListener('dragstart', this.handleDocumentDragStart, true);
+    activeDocument.addEventListener('dragover', this.handleDocumentDragOver, true);
+    activeDocument.addEventListener('drop', this.handleDocumentDrop, true);
     this.unsubscribe = this.plugin.store.subscribe(() => this.render());
     this.render();
   }
@@ -102,9 +102,9 @@ export class CardLibraryView extends ItemView {
     this.rootEl?.removeEventListener('dragover', this.handleSidebarDragOver, true);
     this.rootEl?.removeEventListener('dragleave', this.handleSidebarDragLeave, true);
     this.rootEl?.removeEventListener('drop', this.handleSidebarDrop, true);
-    document.removeEventListener('dragstart', this.handleDocumentDragStart, true);
-    document.removeEventListener('dragover', this.handleDocumentDragOver, true);
-    document.removeEventListener('drop', this.handleDocumentDrop, true);
+    activeDocument.removeEventListener('dragstart', this.handleDocumentDragStart, true);
+    activeDocument.removeEventListener('dragover', this.handleDocumentDragOver, true);
+    activeDocument.removeEventListener('drop', this.handleDocumentDrop, true);
     this.contentEl.empty();
   }
 
@@ -142,7 +142,7 @@ export class CardLibraryView extends ItemView {
     searchEl.addEventListener('focus', updateResults);
     searchEl.addEventListener('blur', () => {
       window.setTimeout(() => {
-        if (toolbar.contains(document.activeElement)) return;
+        if (toolbar.contains(activeDocument.activeElement)) return;
         this.visibleSearchResults = [];
         resultsEl.empty();
       }, 0);
@@ -201,7 +201,7 @@ export class CardLibraryView extends ItemView {
         const content = await this.app.vault.cachedRead(file);
         if (content.toLowerCase().includes(normalized)) contentMatches.push(file);
       } catch (error) {
-        console.error('Card Library search failed to read file', file.path, error);
+        console.error('SideCard search failed to read file', file.path, error);
       }
       if (titleMatches.length + contentMatches.length >= 8) break;
     }

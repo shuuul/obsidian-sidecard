@@ -1,15 +1,15 @@
-# Card Library for Obsidian
+# SideCard for Obsidian
 
 [![Obsidian plugin](https://img.shields.io/badge/Obsidian-plugin-7C3AED?logo=obsidian&logoColor=white)](https://community.obsidian.md/plugins/sidecard)
 [![Version](https://img.shields.io/github/v/release/shuuul/obsidian-sidecard?label=version)](https://github.com/shuuul/obsidian-sidecard/releases/latest)
 
-Card Library adds a Heptabase-inspired side card panel to Obsidian. It is built for writing and research sessions where you want to keep several notes, PDFs, or images visible at once while you work in the editor.
+SideCard adds a Heptabase-inspired side card panel to Obsidian. It is built for writing and research sessions where you want to keep several notes, PDFs, or images visible at once while you work in the editor.
 
 Instead of constantly switching tabs, you can collect related files as cards in the sidebar, cross-reference them, resize them, pin them, and reorder them as your context changes.
 
 ## Why
 
-Heptabase is useful because it makes it easy to work with multiple pieces of context side by side. Card Library brings a lightweight version of that workflow into Obsidian:
+Heptabase is useful because it makes it easy to work with multiple pieces of context side by side. SideCard brings a lightweight version of that workflow into Obsidian:
 
 - keep multiple source notes open as sidebar cards;
 - compare references while writing in another editor tab;
@@ -32,18 +32,18 @@ Heptabase is useful because it makes it easy to work with multiple pieces of con
 
 ## Usage
 
-### Open the Card Library
+### Open SideCard
 
 Use either:
 
 - the ribbon icon; or
-- the command palette command: **Open Card Library**.
+- the command palette command: **Open**.
 
-The Card Library opens in the configured sidebar.
+SideCard opens in the configured sidebar.
 
 ### Add cards with search
 
-1. Click the search box at the top of the Card Library.
+1. Click the search box at the top of SideCard.
 2. Recent files appear immediately.
 3. Type to search your vault.
    - Title/path/frontmatter matches are prioritized.
@@ -61,7 +61,7 @@ Supported file types:
 You can convert an existing Obsidian tab into a card:
 
 1. Open a note, PDF, or image in a normal Obsidian tab.
-2. Drag the tab header into the Card Library sidebar.
+2. Drag the tab header into the SideCard sidebar.
 3. The plugin creates a card for the tab's file.
 4. The original tab is closed, so the file now lives as a sidebar card instead of a main editor tab.
 
@@ -69,7 +69,7 @@ This uses the file path behind the tab. It does not preserve the editor tab's tr
 
 ### Drag a card back into an editor tab
 
-Drag a card out of the Card Library and drop it into the main workspace area. The card opens as a normal Obsidian tab and is removed from the card list.
+Drag a card out of SideCard and drop it into the main workspace area. The card opens as a normal Obsidian tab and is removed from the card list.
 
 ### Reorder cards
 
@@ -124,7 +124,7 @@ For local Obsidian testing, copy `.env.example` to `.env.local` and set `OBSIDIA
 npm run obsidian:load
 ```
 
-This builds the plugin, deploys it into the configured vault, reloads Obsidian, enables/reloads the plugin, and opens the Card Library view.
+This builds the plugin, deploys it into the configured vault, reloads Obsidian, enables/reloads the plugin, and opens the SideCard view.
 
 ## License
 

@@ -1,9 +1,9 @@
 {
   "id": "sidecard",
-  "name": "Card Library",
+  "name": "SideCard",
   "version": "0.1.0",
-  "minAppVersion": "1.5.0",
-  "description": "A sidebar card library for cross-referencing Markdown notes, PDFs, and images.",
+  "minAppVersion": "1.7.2",
+  "description": "A sidebar card library for cross-referencing Markdown notes, PDFs, and images while writing.",
   "author": "shuuul",
   "authorUrl": "https://github.com/shuuul",
   "isDesktopOnly": false

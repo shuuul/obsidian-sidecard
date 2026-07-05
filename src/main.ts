@@ -15,13 +15,13 @@ export default class CardLibraryPlugin extends Plugin {
 
     this.registerView(VIEW_TYPE_CARD_LIBRARY, (leaf) => new CardLibraryView(leaf, this));
 
-    this.addRibbonIcon('library', 'Open Card Library', () => {
+    this.addRibbonIcon('library', 'Open SideCard', () => {
       void this.activateView();
     });
 
     this.addCommand({
       id: 'open-card-library',
-      name: 'Open Card Library',
+      name: 'Open',
       callback: () => void this.activateView(),
     });
 
@@ -65,7 +65,7 @@ export default class CardLibraryPlugin extends Plugin {
         : this.app.workspace.getRightLeaf(false);
       await leaf?.setViewState({ type: VIEW_TYPE_CARD_LIBRARY, active: true });
     }
-    if (leaf) this.app.workspace.revealLeaf(leaf);
+    if (leaf) await this.app.workspace.revealLeaf(leaf);
   }
 
   private registerVaultEvents(): void {

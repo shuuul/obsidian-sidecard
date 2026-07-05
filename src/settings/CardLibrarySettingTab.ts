@@ -1,6 +1,7 @@
 import { App, PluginSettingTab, Setting } from 'obsidian';
 import type CardLibraryPlugin from '../main';
-import type { CardLibrarySettings } from '../types';
+
+type NumericSettingKey = 'defaultCardHeightPx' | 'minCardHeightPx' | 'maxExpandedCards';
 
 export class CardLibrarySettingTab extends PluginSettingTab {
   constructor(app: App, private plugin: CardLibraryPlugin) {
@@ -11,11 +12,14 @@ export class CardLibrarySettingTab extends PluginSettingTab {
     const { containerEl } = this;
     const settings = this.plugin.store.getSettings();
     containerEl.empty();
-    containerEl.createEl('h2', { text: 'Card Library' });
+
+    new Setting(containerEl)
+      .setName('SideCard')
+      .setHeading();
 
     new Setting(containerEl)
       .setName('Default sidebar side')
-      .setDesc('Where to create the Card Library view if it is not already open.')
+      .setDesc('Where to create the SideCard view if it is not already open.')
       .addDropdown((dropdown) => dropdown
         .addOption('right', 'Right')
         .addOption('left', 'Left')
@@ -64,9 +68,9 @@ export class CardLibrarySettingTab extends PluginSettingTab {
         .onChange((value) => this.plugin.store.updateSettings({ showFilePath: value as 'always' | 'never' })));
   }
 
-  private updateNumber(key: keyof CardLibrarySettings, value: string): void {
+  private updateNumber(key: NumericSettingKey, value: string): void {
     const numeric = Number(value);
     if (!Number.isFinite(numeric)) return;
-    this.plugin.store.updateSettings({ [key]: numeric } as Partial<CardLibrarySettings>);
+    this.plugin.store.updateSettings({ [key]: numeric });
   }
 }

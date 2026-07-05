@@ -1,5 +1,8 @@
 # Card Library for Obsidian
 
+[![Obsidian plugin](https://img.shields.io/badge/Obsidian-plugin-7C3AED?logo=obsidian&logoColor=white)](https://community.obsidian.md/plugins/sidecard)
+[![Version](https://img.shields.io/github/v/release/shuuul/obsidian-sidecard?label=version)](https://github.com/shuuul/obsidian-sidecard/releases/latest)
+
 Card Library adds a Heptabase-inspired side card panel to Obsidian. It is built for writing and research sessions where you want to keep several notes, PDFs, or images visible at once while you work in the editor.
 
 Instead of constantly switching tabs, you can collect related files as cards in the sidebar, cross-reference them, resize them, pin them, and reorder them as your context changes.

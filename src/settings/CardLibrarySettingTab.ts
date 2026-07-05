@@ -14,10 +14,6 @@ export class CardLibrarySettingTab extends PluginSettingTab {
     containerEl.empty();
 
     new Setting(containerEl)
-      .setName('Settings')
-      .setHeading();
-
-    new Setting(containerEl)
       .setName('Default sidebar side')
       .setDesc('Where to create the SideCard view if it is not already open.')
       .addDropdown((dropdown) => dropdown

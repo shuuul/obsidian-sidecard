@@ -1,0 +1,36 @@
+{
+  "name": "obsidian-sidecard",
+  "version": "0.1.0",
+  "description": "Card libraries in Obsidian's sidebar.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "obsidian:load": "node scripts/load-obsidian.mjs",
+    "obsidian:reload": "obsidian reload && obsidian plugin:reload id=obsidian-sidecard && obsidian command id=obsidian-sidecard:open-card-library"
+  },
+  "keywords": [
+    "obsidian",
+    "obsidian-plugin"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.11.24",
+    "@types/sortablejs": "^1.15.9",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.25.0",
+    "jest": "^29.7.0",
+    "jest-util": "^29.7.0",
+    "obsidian": "^1.8.7",
+    "ts-jest": "^29.4.11",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "sortablejs": "^1.15.7"
+  }
+}

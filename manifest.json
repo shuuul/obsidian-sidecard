@@ -1,0 +1,11 @@
+{
+  "id": "obsidian-sidecard",
+  "name": "Card Library",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "A sidebar card library for Markdown notes and PDFs.",
+  "author": "",
+  "authorUrl": "",
+  "fundingUrl": "",
+  "isDesktopOnly": false
+}

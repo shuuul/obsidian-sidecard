@@ -21,7 +21,7 @@ if you want to view the source, please visit the github repository of this plugi
 
 const prod = process.argv[2] === 'production';
 const watch = process.argv[2] === '--watch';
-const pluginId = 'obsidian-sidecard';
+const pluginId = 'sidecard';
 const deployFiles = new Set(['main.js', 'manifest.json', 'styles.css']);
 const obsidianVault = process.env.OBSIDIAN_VAULT;
 const obsidianPluginPath = obsidianVault && existsSync(obsidianVault)

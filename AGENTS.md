@@ -14,10 +14,10 @@ That command performs:
 
 1. `npm run build`
 2. copy `main.js`, `manifest.json`, and `styles.css` into the configured vault plugin folder
-3. add `obsidian-sidecard` to the vault's `community-plugins.json` if needed
+3. add `sidecard` to the vault's `community-plugins.json` if needed
 4. `obsidian reload`
-5. `obsidian plugin:enable id=obsidian-sidecard`
-6. `obsidian plugin:reload id=obsidian-sidecard`
+5. `obsidian plugin:enable id=sidecard`
+6. `obsidian plugin:reload id=sidecard`
 7. open the Card Library view
 8. print `obsidian dev:errors`
 
@@ -35,7 +35,7 @@ OBSIDIAN_VAULT=/absolute/path/to/your/vault
 
 ## Deployment rules
 
-- Deploy only `main.js`, `manifest.json`, and `styles.css` to `.obsidian/plugins/obsidian-sidecard/`.
+- Deploy only `main.js`, `manifest.json`, and `styles.css` to `.obsidian/plugins/sidecard/`.
 - Preserve Obsidian-created `data.json`.
 - Do not copy `node_modules`, source files, scripts, or package metadata into the vault plugin folder.
 - After deploy/reload, check `obsidian dev:errors`; report any plugin errors instead of claiming success.

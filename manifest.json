@@ -1,11 +1,10 @@
 {
-  "id": "obsidian-sidecard",
+  "id": "sidecard",
   "name": "Card Library",
   "version": "0.1.0",
   "minAppVersion": "1.5.0",
-  "description": "A sidebar card library for Markdown notes and PDFs.",
-  "author": "",
-  "authorUrl": "",
-  "fundingUrl": "",
+  "description": "A sidebar card library for cross-referencing Markdown notes, PDFs, and images.",
+  "author": "shuuul",
+  "authorUrl": "https://github.com/shuuul",
   "isDesktopOnly": false
 }

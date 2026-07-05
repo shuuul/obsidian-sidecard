@@ -9,13 +9,13 @@
     "test:watch": "jest --watch",
     "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
     "obsidian:load": "node scripts/load-obsidian.mjs",
-    "obsidian:reload": "obsidian reload && obsidian plugin:reload id=obsidian-sidecard && obsidian command id=obsidian-sidecard:open-card-library"
+    "obsidian:reload": "obsidian reload && obsidian plugin:reload id=sidecard && obsidian command id=sidecard:open-card-library"
   },
   "keywords": [
     "obsidian",
     "obsidian-plugin"
   ],
-  "author": "",
+  "author": "shuuul",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.14",

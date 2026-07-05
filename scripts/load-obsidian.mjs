@@ -5,7 +5,7 @@ import os from 'os';
 import path from 'path';
 import process from 'process';
 
-const pluginId = 'obsidian-sidecard';
+const pluginId = 'sidecard';
 const openCommand = `${pluginId}:open-card-library`;
 
 function loadEnvLocal() {

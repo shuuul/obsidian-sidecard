@@ -40,6 +40,44 @@ OBSIDIAN_VAULT=/absolute/path/to/your/vault
 - Do not copy `node_modules`, source files, scripts, or package metadata into the vault plugin folder.
 - After deploy/reload, check `obsidian dev:errors`; report any plugin errors instead of claiming success.
 
+## Release workflow
+
+Follow the Obsidian plugin release convention used by Pivi:
+
+1. Ensure `manifest.json`, `package.json`, and `versions.json` all describe the release version.
+   - `manifest.json.version` must use semantic versioning in `x.y.z` format.
+   - The GitHub release tag must match `manifest.json.version` exactly.
+   - Obsidian plugin release tags must not use a leading `v`; use `0.1.0`, not `v0.1.0`.
+2. Validate `manifest.json` against the Obsidian manifest rules:
+   - required fields: `id`, `name`, `version`, `minAppVersion`, `description`, `author`, `isDesktopOnly`;
+   - `id` contains only lowercase letters and hyphens;
+   - `id` does not contain `obsidian` and does not end with `plugin`;
+   - optional URL fields should be omitted unless they contain valid URLs.
+3. Run the pre-release checks:
+
+   ```bash
+   npm test -- --runInBand
+   npm run build
+   npm run obsidian:load
+   ```
+
+4. Commit and push the source changes. Do not commit generated `main.js`; it is intentionally git-ignored.
+5. Create or update the GitHub release using the exact version tag and upload only the Obsidian release artifacts:
+
+   ```bash
+   gh release create <version> main.js manifest.json styles.css \
+     --repo shuuul/obsidian-sidecard \
+     --target main \
+     --title "<version>" \
+     --notes-file <release-notes.md>
+   ```
+
+   If the release already exists, use `gh release upload <version> main.js manifest.json styles.css --clobber` after rebuilding.
+6. Verify the release assets are exactly:
+   - `main.js`
+   - `manifest.json`
+   - `styles.css`
+
 ## Verification expectations
 
 - Small UI/code changes: run `npm run obsidian:load`.

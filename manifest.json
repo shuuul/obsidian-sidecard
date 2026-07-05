@@ -1,7 +1,7 @@
 {
   "id": "sidecard",
   "name": "SideCard",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "minAppVersion": "1.7.2",
   "description": "A sidebar card library for cross-referencing Markdown notes, PDFs, and images while writing.",
   "author": "shuuul",

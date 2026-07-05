@@ -1,6 +1,6 @@
 {
   "name": "obsidian-sidecard",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "SideCard adds a sidebar card library for Obsidian.",
   "main": "main.js",
   "scripts": {

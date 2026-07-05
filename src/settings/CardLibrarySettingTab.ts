@@ -14,7 +14,7 @@ export class CardLibrarySettingTab extends PluginSettingTab {
     containerEl.empty();
 
     new Setting(containerEl)
-      .setName('SideCard')
+      .setName('Settings')
       .setHeading();
 
     new Setting(containerEl)

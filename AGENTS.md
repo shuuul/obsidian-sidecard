@@ -83,3 +83,7 @@ Follow the Obsidian plugin release convention used by Pivi:
 - Small UI/code changes: run `npm run obsidian:load`.
 - Build-only or manifest changes: run `npm run obsidian:load` because Obsidian must rescan plugin metadata.
 - If Obsidian CLI is unavailable or offline, run at least `npm run build` and state that live reload was not verified.
+
+## UI copy conventions
+
+- Avoid including the plugin name in settings headings; Obsidian already provides the plugin context.
